@@ -8,144 +8,58 @@ This course repository is updated to Angular v10, and there is a  package-lock.j
 ![Reactive Angular Course](https://angular-university.s3-us-west-1.amazonaws.com/course-images/reactive-angular-course.jpg)
 
 
-# Installation pre-requisites
+This Course in a Nutshell
 
-IMPORTANT: Please use the latest Node and especially NPM, to make sure the package-lock.json is used.
+This course is a catalog of commonly used design patterns (and some anti-patterns) that every Angular developer should know. The goal of the course is to teach you how to comfortably design and develop applications in Angular in Reactive style using just plain RxJs, and nothing more.
 
-For running this project we need and npm installed on our machine. These are some tutorials to install node in different operating systems:
+This course comes with a running Github repository with the the finished code, as well as starting points for different sections of the course in case that you want to code along, which we recommend as its the best way to learn.
 
-*Its important to install the latest version of Node*
+This course answers the common question: how far can we go in Angular while using only plain RxJs and nothing more, without introducing any state management library?
 
-- [Install Node and NPM on Windows](https://www.youtube.com/watch?v=8ODS6RM6x7g)
-- [Install Node and NPM on Linux](https://www.youtube.com/watch?v=yUdHk-Dk_BY)
-- [Install Node and NPM on Mac](https://www.youtube.com/watch?v=Imj8PgG3bZU)
+It turns out that the simple set of techniques taught in this course are very well suited for a wide range of applications, especially in-house built enterprise applications.
 
+In this course, you will learn exactly how to use RxJs to design and develop both the service and the view layers of your application, and you will understand both the advantages and the pitfalls of the reactive approach.
 
-# Installing the Angular CLI
+These simplified state management techniques are adequate and sufficient for a large range of applications, and we believe that you should consider them first before thinking of adopting a full-blown state management solution.
 
-With the following command the angular-cli will be installed globally in your machine:
+How far can you go with these techniques? That's what you will find out in this course.
 
-    npm install -g @angular/cli 
+Course Overview
 
+We are going to start our course by taking a small Angular application that is written in imperative style, and we are going to talk about some of the problems of that approach. Then, we are going to refactor the application and explain step-by-step how to implement it in reactive style instead.
 
-# How To install this repository
+We will explain in detail every RxJs operator that we come across in this course, the first time that we need each operator.
 
-We can install the master branch using the following commands:
+We are going to start with a fully stateless solution first, but later we are going to improve the user experience by applying some simple RxJs-only state management techniques. We are going to use these patterns in order to handle some of the data of the application, as well as the user authentication profile.
 
-    git clone https://github.com/angular-university/reactive-angular-course.git
-    
-This repository is made of several separate npm modules, that are installable separately. For example, to run the au-input module, we can do the following:
-    
-    cd reactive-angular-course
-    npm install
+The key element needed to implement lightweight state management is RxJs behavior subjects so we will cover those in detail in the course. We will also provide step-by-step reactive style solutions for common UI functionality like loading indicators or error messages.
 
-Its also possible to install the modules as usual using npm:
+Table of Contents
 
-    npm install 
+This course covers the following topics:
 
-NPM 5 or above has the big advantage that if you use it you will be installing the exact same dependencies than I installed in my machine, so you wont run into issues caused by semantic versioning updates.
+    Review of an application written in imperative style
+    Refactoring into stateless reactive style, understanding the benefits
+    Smart vs Presentational Components
+    Stateless Observable Services
+    The shareReplay Operator
+    Stateless UI updates (without state management)
+    Introduction to RxJs Subjects and BehaviorSubject
+    Decoupled component communication using shared observable services
+    Using Observables to have components interact at different levels of the component tree
+    Error Handling and error messages in reactive style
+    Loading Indicators in reactive style
+    Improving user experience with lightweight RxJs stores
+    Optimistic UI updates
+    Managing User Authentication state with plain RxJs
+    Local vs Global Services
+    Master Detail with cached master table in reactive style
+    The Single Data Observable Pattern: Avoiding nested ng-component tags
+    Refactoring a reactive application to OnPush change detection
+    Conclusion and key takeaways
 
-This should take a couple of minutes. If there are issues, please post the complete error message in the Questions section of the course.
+What Will You Learn In this Course?
 
-# To Run the Development Backend Server
+At the end of the course, you will feel comfortable designing and developing Angular applications in reactive style, by leveraging plain RxJs-only techniques. You will know how to apply simplified reactive state management techniques to different common use cases, and you will understand the advantages and the limitations of this approach.
 
-In order to be able to provide realistic examples, we will need in our playground a small REST API backend server. We can start the sample application backend with the following command:
-
-    npm run server
-
-This is a small Node REST API server.
-
-# To run the Development UI Server
-
-To run the frontend part of our code, we will use the Angular CLI:
-
-    npm start 
-
-The application is visible at port 4200: [http://localhost:4200](http://localhost:4200)
-
-
-
-# Important 
-
-This repository has multiple branches, have a look at the beginning of each section to see the name of the branch.
-
-At certain points along the course, you will be asked to checkout other remote branches other than master. You can view all branches that you have available remotely using the following command:
-
-    git branch -a
-
-  The remote branches have their starting in origin, such as for example 1-navigation-and-containers.
-
-We can checkout the remote branch and start tracking it with a local branch that has the same name, by using the following command:
-
-      git checkout -b section-1 origin/1-navigation-and-containers
-
-It's also possible to download a ZIP file for a given branch,  using the branch dropdown on this page on the top left, and then selecting the Clone or Download / Download as ZIP button.
-
-# Other Courses
-
-# Angular PWA Course
-
-If you are looking for the [Angular PWA Course](https://angular-university.io/course/angular-pwa-course), the repo with the full code can be found here:
-
-![Angular PWA Course - Build the future of the Web Today](https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-pwa-course.png)
-
-# Angular Security Masterclass
-
-If you are looking for the [Angular Security Masterclass](https://angular-university.io/course/angular-security-course), the repo with the full code can be found here:
-
-[Angular Security Masterclass](https://github.com/angular-university/angular-security-course).
-
-![Angular Security Masterclass](https://s3-us-west-1.amazonaws.com/angular-university/course-images/security-cover-small-v2.png)
-
-# Angular Advanced Library Laboratory Course
-
-If you are looking for the Angular Advanced Course, the repo with the full code can be found here:
-
-[Angular Advanced Library Laboratory Course: Build Your Own Library](https://angular-university.io/course/angular-advanced-course).
-
-![Angular Advanced Library Laboratory Course: Build Your Own Library](https://angular-academy.s3.amazonaws.com/thumbnails/advanced_angular-small-v3.png)
-
-
-## RxJs and Reactive Patterns Angular Architecture Course
-
-If you are looking for the RxJs and Reactive Patterns Angular Architecture Course code, the repo with the full code can be found here:
-
-[RxJs and Reactive Patterns Angular Architecture Course](https://angular-university.io/course/reactive-angular-architecture-course)
-
-![RxJs and Reactive Patterns Angular Architecture Course](https://s3-us-west-1.amazonaws.com/angular-academy/blog/images/rxjs-reactive-patterns-small.png)
-
-
-
-## Angular Ngrx Reactive Extensions Architecture Course
-
-If you are looking for the Angular Ngrx Reactive Extensions Architecture Course code, the repo with the full code can be found here:
-
-[Angular Ngrx Reactive Extensions Architecture Course](https://angular-university.io/course/angular2-ngrx)
-
-[Github repo for this course](https://github.com/angular-university/ngrx-course)
-
-![Angular Ngrx Course](https://angular-academy.s3.amazonaws.com/thumbnails/ngrx-angular.png)
-
-
-
-## Angular 2 and Firebase - Build a Web Application Course
-
-If you are looking for the Angular 2 and Firebase - Build a Web Application Course code, the repo with the full code can be found here:
-
-[Angular 2 and Firebase - Build a Web Application](https://angular-university.io/course/build-an-application-with-angular2)
-
-[Github repo for this course](https://github.com/angular-university/angular-firebase-app)
-
-![Angular firebase course](https://angular-academy.s3.amazonaws.com/thumbnails/angular_app-firebase-small.jpg)
-
-
-## Complete Typescript 2 Course - Build A REST API
-
-If you are looking for the Complete Typescript 2 Course - Build a REST API, the repo with the full code can be found here:
-
-[https://angular-university.io/course/typescript-2-tutorial](https://github.com/angular-university/complete-typescript-course)
-
-[Github repo for this course](https://github.com/angular-university/complete-typescript-course)
-
-![Complete Typescript Course](https://angular-academy.s3.amazonaws.com/thumbnails/typescript-2-small.png)
-
+You will be familiar with a series of commonly needed reactive design patterns, and you will also be familiar with a series of common pitfalls to avoid.
