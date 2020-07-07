@@ -11,11 +11,31 @@ import { Lesson } from "app/model/lesson";
 export class CoursesService {
   constructor(private http: HttpClient) {}
 
+  loadCourseById(courseid: number): Observable<Course> {
+    return this.http
+      .get<Course>(`/api/courses/${courseid}`)
+      .pipe(shareReplay());
+  }
+
   loadAllCourses(): Observable<Course[]> {
     return this.http.get<Course[]>("/api/courses").pipe(
       map((res) => res["payload"]),
       shareReplay()
     );
+  }
+
+  loadAllCoursesLessosn(courseId: number): Observable<Lesson[]> {
+    return this.http
+      .get<Lesson[]>("/api/lessons", {
+        params: {
+          pageSize: "100",
+          courseId: courseId.toString(),
+        },
+      })
+      .pipe(
+        map((res) => res["payload"]),
+        shareReplay()
+      );
   }
 
   saveCourse(courseId: string, changes: Partial<Course>): Observable<any> {
